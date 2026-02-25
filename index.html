@@ -114,7 +114,7 @@
       var ua = navigator.userAgent;
       var isPS4 = ua.indexOf("PlayStation 4") !== -1;
       var is67x = ((ua.indexOf(" 6.70") !== -1) || (ua.indexOf(" 6.71") !== -1) || (ua.indexOf(" 6.72") !== -1));
-      if (isPS4 && is67x) {
+      if (isPS4 && is67x && (window.applicationCache.status !== 0)) {
         var xhr = new XMLHttpRequest();
         xhr.open('GET', '672entrypoint.js', false); // sync
         xhr.send('');
