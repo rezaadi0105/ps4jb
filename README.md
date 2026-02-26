@@ -1,19 +1,25 @@
-# PSFree WebKit Exploit & Lapse Kernel Exploit v2.04 for PS4
+# Multi-Firmware PS4 WebKit & Kernel Exploit Chain
 
-A PSFree & Lapse exploit for PS4 firmware 7.00 to 9.60
+An exploit chain for PS4 firmware 5.05, 6.72 and [7.00 to 9.60]
 > ⚠️ This repository is for research and educational purposes only.
 
+> ⚠️ **Beta / Work in Progress**
+>
+> This project is still under active development and beta testing. Firmware-specific issues may occur.
+
 ## Overview
-This repository is a research-focused fork of [PSFree](https://github.com/kmeps4/PSFree) that aims to improve the reliability and success rate of existing public exploit code. The project’s main motivation is twofold:
+This repository is a research-focused fork and consolidation of multiple public exploit projects. Its primary goal is to improve the reliability, stability and execution determinism of existing WebKit and kernel exploit chains across supported firmware versions.
 
-1. **increase stability and success rate** through timing, error-handling and reliability improvements.
+The project focuses on:
 
-2. **reduce platform compatibility requirements** by converting the existing `.mjs` modular structure into plain `.js`. The result is less modular structure but is more portable codebase.
+- **Increasing stability and success rate** through refined timing control, improved error handling and sequential execution flow.
 
-Through these changes, the original modular `.mjs` structure has been refactored into a single-file `.js` implementation designed to execute in a more sequential, `C-like` flow. This approach improves readability, simplifies debugging and ensures consistent execution timing across environments.
+- **Reducing platform compatibility constraints** by converting the original `.mjs` modular structure into a plain `.js` implementation.
+
+Additionally, the project utilizes **firmware-aware dynamic script loading** to ensure that only the required exploit stages are loaded at runtime. This approach improves timing consistency, reduces ES5/ES6 compatibility issues across firmware versions and enhances overall execution predictability.
 
 <p align="center">
-  <img src="psfree_lapse_2.04.png" alt="PSFree" width="537" height="588"/>
+  <img src="ps4jb.png" alt="PSFree" width="468" height="624"/>
 </p>
 
 ---
@@ -44,15 +50,23 @@ Through these changes, the original modular `.mjs` structure has been refactored
 - **Merged various tweaks from Al-Azif’s source** — Incorporated selected stability, compatibility, and workflow improvements from Al-Azif’s implementation to enhance overall reliability and reduce edge-case failures.
 - **Added multi-firmware support (7.00 -> 9.60) from Al-Azif’s source** — Full support implemented for firmware versions 7.00 through 9.60, including: Kernel patch + AIO fix .bin files
 
-## ToDo List
-
-- Add 6.XX support
-
 ## Notes:
 
-> All payload binaries (`*.bin`, `*.elf`) were intentionally excluded.
-> Step-by-step jailbreak instructions were omitted for legal and ethical compliance.  
+> All payload binaries (`*.bin`, `*.elf`) were intentionally excluded. This repository does not include `payload.bin` file. Place your preferred Homebrew Enabler (HEN) payload in the root directory.
+
+> Step-by-step jailbreak instructions were omitted for legal and ethical compliance.
+
 > No modifications that alter the exploit logic in ways affecting device security outside test context.
+
+## Local Self-Hosting
+
+You can self-host the project using Python's built-in HTTP server.
+
+Windows: `py -m http.server 8080`
+
+Linux/macOS: `python3 -m http.server 8080`
+
+On your PS4 browser, navigate to: `http://YOUR_PC_IP:8080/index.html`
 
 ## Contributing
 
@@ -66,12 +80,18 @@ Please review the [LICENSE](LICENSE) before redistributing or modifying the code
 
 Special thanks to:
 
-* **ABC**, the designer of the PSFree and Lapse core software, whose foundational work made many of these improvements possible.
-* [kmeps4](https://github.com/kmeps4) and [Al-Azif](https://github.com/Al-Azif) for their PSFree projects which inspired me a lot in this repo.
+* **qwertyoruiopz**, Webkit Entrypoint for 5.05
+* **Specter**, Kernel Exploit for 5.05
+* **Fire30**, Bad Hoist Entrypoint for 6.7x
+* **Sleirsgoevy**, Kernel Exploit for 6.7x
+* **ABC**, PSFree and Lapse core software
+* [KAR0218](https://github.com/KAR0218) for 5.05Gold project
+* [ps3120](https://github.com/ps3120) for 6.72 project
+* [kmeps4](https://github.com/kmeps4) and [Al-Azif](https://github.com/Al-Azif) for PSFree projects
 * **ps4dev team** for their continuous support and invaluable contributions to the PS4 research ecosystem. This project stands on the hard work of all the developers behind it — none of this would be possible without their efforts.
 * everyone who tested the updates across various firmware versions and supported the project with their valuable feedback.
 
-Extra thanks to **Dr.Yenyen** for thoroughly testing every supported firmware version and dedicating an incredible amount of time and effort to ensure stability and reliability.
+Extra thanks to **Sajjad** for thoroughly testing supported firmware versions and dedicating an incredible amount of time and effort to ensure stability and reliability.
 
 ## Contact
 
