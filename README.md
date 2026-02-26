@@ -51,6 +51,7 @@ Additionally, the project utilizes **firmware-aware dynamic script loading** to 
 - **Added multi-firmware support (7.00 -> 9.60) from Al-Azif’s source** — Full support implemented for firmware versions 7.00 through 9.60, including: Kernel patch + AIO fix .bin files
 
 ## Notes:
+> Firmware 7.00–9.60 includes integrated PSFree kernel patch shellcodes and AIO patch sets.
 
 > All payload binaries (`*.bin`, `*.elf`) were intentionally excluded. This repository does not include `payload.bin` file. Place your preferred Homebrew Enabler (HEN) payload in the root directory.
 
