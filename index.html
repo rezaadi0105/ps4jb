@@ -4,6 +4,8 @@
     <title>PS4 Jailbreak</title>
     <style>
       body {
+        background-image: url("bg.jpg");
+        background-repeat: no-repeat;
         background-color: #252526;
         color: #cccccc;
         font-family: "Segoe UI", Tahoma, sans-serif;
@@ -41,6 +43,14 @@
       #jailbreakBtn:not(:disabled):hover {
         background: #005a9e;
       }
+      #hen_logo {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 150px;
+        height: auto;
+        z-index: 1000;
+      }
       footer {
         margin-top: 30px;
         font-size: 14px;
@@ -68,6 +78,7 @@
     <footer>
       UI Designed by <strong>Feyzee</strong>
     </footer>
+    <img src="henlogo.png" id="hen_logo">
   </body>
   <script>
     // 6.72 JB globals
@@ -131,7 +142,7 @@
       var fwVersion = match[2]; // "9.00", "9.03", etc.
       // Convert "9.00" to 0x900
       config_target = parseInt(fwVersion.replace('.', ''), 16);
-      window.log("Detected FW: PS" + device + " v" + fwVersion + ", PS4JB Version: v1.02b\n");
+      window.log("Detected FW: PS" + device + " v" + fwVersion + ", PS4JB Version: v1.03b\n");
       // Supported FW lists
       var supportedFW = {
         "4": ["5.05", "6.70", "6.71", "6.72",
