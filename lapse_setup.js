@@ -38,9 +38,9 @@ const RTP_PRIO_REALTIME = 2;
 const RTP_PRIO_NORMAL = 3;
 const RTP_PRIO_IDLE = 4;
 //
-const PROT_READ = 0x01;
-const PROT_WRITE = 0x02;
-const PROT_EXEC = 0x04;
+const PROT_READ = 1;
+const PROT_WRITE = 2;
+const PROT_EXEC = 4;
 // SceAIO has 2 SceFsstAIO workers for each SceAIO Parameter. each Parameter
 // has 3 queue groups: 4 main queues, 4 wait queues, and one unused queue
 // group. queue 0 of each group is currently unused. queue 1 has the lowest
