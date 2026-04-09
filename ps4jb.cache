@@ -1,19 +1,21 @@
 CACHE MANIFEST
-# PS4JB_Cache
+# v1
+# Generated on 2026-04-28 10:53:55.814106
 
-cache.html
-index.html
+CACHE:
+henlogo.png
+bg.jpg
+psfree_lapse_shared.js
 505exploit.js
 672entrypoint.js
 672kexploit.js
-psfree_lapse_shared.js
-payload.bin
-psfree.js
+cache.html
 lapse_setup.js
 lapse_exploit.js
 main.js
-bg.jpg
-henlogo.png
+index.html
+payload.bin
+psfree.js
 
 NETWORK:
 *
