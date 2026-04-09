@@ -19,10 +19,6 @@ The project focuses on:
 
 Additionally, the project utilizes **firmware-aware dynamic script loading** to ensure that only the required exploit stages are loaded at runtime. This approach improves timing consistency, reduces ES5/ES6 compatibility issues across firmware versions and enhances overall execution predictability.
 
-<p align="center">
-  <img src="ps4jb.png" alt="PSFree" width="468" height="624"/>
-</p>
-
 ---
 
 ## **Legal Notice & Disclaimer:**
