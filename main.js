@@ -69,21 +69,21 @@ async function doJailBreak() {
     await loadScript('psfree.js');
     Init_PSFreeGlobals();
     jb_step_status = await doPSFreeExploit();
-    if (jb_step_status !== 1) return;
+    if (jb_step_status !== 1) return false;
     window.log("Starting Lapse Kernel Exploit...");
     await sleep(200); // Wait 200ms
     await loadScript('lapse_setup.js');
     jb_step_status = await doLapseInit();
-    if (jb_step_status !== 1) return;
+    if (jb_step_status !== 1) return false;
     await loadScript('lapse_exploit.js');
     jb_step_status = await doLapseExploit();
-    if (jb_step_status !== 1) return;
+    if (jb_step_status !== 1) return false;
     await sleep(500); // Wait 500ms
     // Inject HEN payload
     jb_step_status = await PayloadLoader("payload.bin"); // Read payload from .bin file
     if (jb_step_status !== 1) {
       window.log("Failed to load HEN!\nPlease restart console and try again...", "red");
-      return;
+      return false;
     }
     window.log("Homebrew Enabler loaded", "green");
     window.log("\nPSFree & Lapse exploit with AIO fixes by ABC");
